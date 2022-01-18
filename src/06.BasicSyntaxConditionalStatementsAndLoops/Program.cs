@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.Design;
 
 namespace _06.BasicSyntaxConditionalStatementsAndLoops
 {
@@ -322,21 +323,39 @@ namespace _06.BasicSyntaxConditionalStatementsAndLoops
 
             // Console.WriteLine($"Change: {Math.Abs(collectedMoney - amountOfPurchasedItems):F2}");
 
-            // 8. Triangle of Numbers
+            //// 8. Triangle of Numbers
 
-            var input = int.Parse(Console.ReadLine());
+            //var input = int.Parse(Console.ReadLine());
 
-            for (var i = 0; i < input; i++)
-            {
-                var num = i + 1;
+            //for (var i = 0; i < input; i++)
+            //{
+            //    var num = i + 1;
 
-                for (var j = 0; j < num; j++)
-                {
-                    Console.Write($"{num} ");
-                }
+            //    for (var j = 0; j < num; j++)
+            //    {
+            //        Console.Write($"{num} ");
+            //    }
 
-                Console.WriteLine();
-            }
+            //    Console.WriteLine();
+
+            // 9. *Padawan Equipment
+
+            var availableMoney = double.Parse(Console.ReadLine());
+            var studentsCount = int.Parse(Console.ReadLine());
+            var saberPrice = double.Parse(Console.ReadLine());
+            var robePrice = double.Parse(Console.ReadLine());
+            var beltPrice =double.Parse(Console.ReadLine());
+
+            int freeBeltsCount = studentsCount / 6;
+
+            var price = 
+                saberPrice * (Math.Round(studentsCount * 0.10, MidpointRounding.ToPositiveInfinity) + studentsCount) 
+                + (robePrice * studentsCount) 
+                + (beltPrice * (studentsCount - freeBeltsCount));
+
+            Console.WriteLine(availableMoney >= price
+                ? $"The money is enough - it would cost {price:F2}lv."
+                : $"John will need {Math.Abs(availableMoney - price):F2}lv more.");
         }
     }
 }
