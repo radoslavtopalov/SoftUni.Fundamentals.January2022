@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel.Design;
 
 namespace _06.BasicSyntaxConditionalStatementsAndLoops
 {
@@ -344,13 +343,13 @@ namespace _06.BasicSyntaxConditionalStatementsAndLoops
             var studentsCount = int.Parse(Console.ReadLine());
             var saberPrice = double.Parse(Console.ReadLine());
             var robePrice = double.Parse(Console.ReadLine());
-            var beltPrice =double.Parse(Console.ReadLine());
+            var beltPrice = double.Parse(Console.ReadLine());
 
             int freeBeltsCount = studentsCount / 6;
 
-            var price = 
-                saberPrice * (Math.Round(studentsCount * 0.10, MidpointRounding.ToPositiveInfinity) + studentsCount) 
-                + (robePrice * studentsCount) 
+            var price =
+                saberPrice * (Math.Round(studentsCount * 0.10, MidpointRounding.ToPositiveInfinity) + studentsCount)
+                + (robePrice * studentsCount)
                 + (beltPrice * (studentsCount - freeBeltsCount));
 
             Console.WriteLine(availableMoney >= price
